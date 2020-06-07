@@ -32,6 +32,11 @@
       "type": "component",
       "repeatable": false,
       "component": "location.address"
+    },
+    "watching": {
+      "collection": "post",
+      "via": "watchedBy",
+      "dominant": true
     }
   }
 }

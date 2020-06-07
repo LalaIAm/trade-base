@@ -52,6 +52,10 @@
     "published": {
       "type": "boolean",
       "default": false
+    },
+    "watchedBy": {
+      "via": "watching",
+      "collection": "profile"
     }
   }
 }
