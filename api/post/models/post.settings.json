@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "Post"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "posts"
+    },
+    "Condition": {
+      "type": "enumeration",
+      "enum": [
+        "new",
+        "excellent",
+        "good",
+        "okay",
+        "shabby"
+      ]
+    },
+    "category": {
+      "model": "category",
+      "via": "posts"
+    },
+    "comments": {
+      "collection": "comment",
+      "via": "post"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "published": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
